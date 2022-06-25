@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'money_management',
     'product_management',
     'rest_framework',
+    'rangefilter',
+    'admin_numeric_filter',
 ]
 
 MIDDLEWARE = [

@@ -1,14 +1,12 @@
+class QuantityType:
+    ADD = 0
+    EXPIRED = 1
+    INVENTORY = 2
 
-
-class select_quantity:
-    add_quantity = 0
-    expired_quantity = 1
-    inventory_quantity = 2
-
-    QUANTITY_CHOICE = (
-        (add_quantity, 'add_quantity'),
-        (expired_quantity, 'expired_quantity'),
-        (inventory_quantity, 'inventory_quantity')
+    ACTION_CHOICES = (
+        (ADD, 'Add quantity'),
+        (EXPIRED, 'Expired quantity'),
+        (INVENTORY, 'Inventory quantity')
     )
 
-    QUANTITY_CHOICE_DICT = dict(QUANTITY_CHOICE)
+    # QuantityType = dict(ACTION_CHOICES)
