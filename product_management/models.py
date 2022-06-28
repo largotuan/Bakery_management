@@ -41,9 +41,13 @@ class History(TrackingAbstractModel):
     #     self.product.quantity = self.expired_quantity + self.inventory_quantity - self.add_quantity
     #     self.product.save()
     @property
-    def get_quantity_display(self):
+    def add_action(self):
         quantity_dict = dict(QuantityType.ACTION_CHOICES)
         return quantity_dict.get(self.action)
+
+    # def action(self):
+    #     action = str(QuantityType.ACTION_CHOICES)
+    #     return self.action
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         self.price = self.product.price

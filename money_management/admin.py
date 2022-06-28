@@ -11,7 +11,7 @@ class TransactionAdmin(admin.ModelAdmin):
         }),
     ]
     list_display = ['id', 'category', 'name', 'amount', 'note']
-    list_display_links = ['id', 'name']
+    list_display_links = ['id', 'category', 'name']
 
 
 class TransactionInLine(admin.TabularInline):

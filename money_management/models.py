@@ -11,9 +11,9 @@ class Category(TrackingAbstractModel, NameAbstractModel):
     def __str__(self):
         return f'{self.name}'
 
-    def save_name(self):
-        self.name = self.name.upper()
-        self.save()
+    # def save_name(self):
+    #     self.name = self.name.upper()
+    #     self.save()
 
 
 class Transaction(TrackingAbstractModel, NameAbstractModel):
@@ -27,4 +27,5 @@ class Transaction(TrackingAbstractModel, NameAbstractModel):
     def __str__(self):
         return f'{self.name} - {self.category} - {self.amount} - {self.note}'
 
-
+    # def category(self):
+    #     return self.category.name

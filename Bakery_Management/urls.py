@@ -18,7 +18,8 @@ from django.urls import path
 from django.conf.urls import include
 from django.contrib.auth.models import User
 from rest_framework import routers, serializers, viewsets
-from money_management.views import GetAllCategoryAPIView
+from money_management.views import GetAllCategoryAPIView, GetTransactionAPIView
+from product_management.views import GetProductAPIView, GetHistoryAPIVIew
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -40,5 +41,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api-category/', GetAllCategoryAPIView),
+    path('api-category/', GetAllCategoryAPIView.as_view()),
+    path('api-transaction/', GetTransactionAPIView.as_view(), name='api_transaction'),
+    path('api-product/', GetProductAPIView.as_view(), name='api-product'),
+    path('api-history/', GetHistoryAPIVIew.as_view(), name='api-history')
 ]
